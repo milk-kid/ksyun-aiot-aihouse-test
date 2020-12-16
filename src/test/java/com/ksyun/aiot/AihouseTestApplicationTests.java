@@ -23,23 +23,17 @@ class AihouseTestApplicationTests extends AbstractTestNGSpringContextTests {
     @Autowired
     EventSource eventSource;
     @Autowired
-    RequestProperties header;
+    RequestProperties requestProperties;
 
-    @Test
-    public void testHeader() {
-        System.out.println(header.getAccount());
-        System.out.println(header.getAiot_token());
-        System.out.println(header.getBaseUrl());
-    }
 
     @Test
     public void turnoff() {
-        String url =header.getBaseUrl()+ "/api/ks-aihouse/device/switch?deviceId=mi.01001.light.2.efef99f2-9e81-4b74-a778-e085a08d020c&switchOn=1";
+        String url =requestProperties.getBaseUrl()+ "/api/ks-aihouse/device/switch?deviceId=mi.01001.light.2.efef99f2-9e81-4b74-a778-e085a08d020c&switchOn=1";
         Map<String, String> head = new HashMap<>();
-        head.put("ACCOUNT", header.getAccount());
-        head.put("ACCOUNT_TYPE", header.getAccount_type());
+        head.put("ACCOUNT", requestProperties.getAccount());
+        head.put("ACCOUNT_TYPE", requestProperties.getAccount_type());
         head.put("Content-Type", "application/json");
-        head.put("AIOT_TOKEN", header.getAiot_token());
+        head.put("AIOT_TOKEN", requestProperties.getAiot_token());
         String body = HttpRequest.get(url).addHeaders(head).execute().body();
         log.info("response = {}", body);
 
