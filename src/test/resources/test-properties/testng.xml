@@ -6,8 +6,7 @@
         <classes>
             <class name="com.ksyun.aiot.AihouseTestApplicationTests">
                 <methods>
-                    <exclude name="turnoff"/>
-                    <include name="testHeader"></include>
+                    <include name="turnoff"/>
                 </methods>
             </class>
         </classes>
