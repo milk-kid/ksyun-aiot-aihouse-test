@@ -70,3 +70,4 @@ header:
   account: ksaihouse
   account-type: ksc
   aiot-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIyMDAwMDk3NjM2IiwiY29ycElkIjoxMDAwMywibG9naW5OYW1lIjoiMTYwODEwMjg4ODI4MyIsInR5cGUiOiJ3ZWIiLCJ1c2VyTmFtZSI6InRlc3RhaWhvdXNlIiwiZXhwIjoxNjA5Mzk4ODg4LCJpYXQiOjE2MDgxMDI4ODgsImFjY291bnQiOiJ0ZXN0YWlob3VzZSIsImFpaG91c2UiOiJob2xkX215X2JlZXIifQ.ypI3DowUyGeFCqtX7iwXnCUpIR_SjTloiFb-Z1lI3BY
+  base-url: http://test.gaea.ksyun.com

@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/Admin/IdeaProjects/aihouse-test/src/test/java/com/ksyun/aiot/aihousetest/AihouseTestApplicationTests.java">
         <classes>
-            <class name="com.ksyun.aiot.AihouseTestApplicationTests">
+            <class name="com.ksyun.aiot.AihouseTest">
                 <methods>
                     <include name="turnoff"/>
                 </methods>

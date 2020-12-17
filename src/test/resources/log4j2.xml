@@ -6,7 +6,7 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
         <!-- 控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch) 优先级，即DEBUG，INFO，WARN，ERROR，-->
-        <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+        <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
 
         <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </Console>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ksyun.aiot.mapper.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.ksyun.aiot.entity.Project" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="project_name" property="projectName" jdbcType="VARCHAR" />
+    <result column="square_meter" property="squareMeter" jdbcType="DECIMAL" />
+    <result column="project_type" property="projectType" jdbcType="VARCHAR" />
+    <result column="province_code" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="country_code" property="countryCode" jdbcType="VARCHAR" />
+    <result column="address_detail" property="addressDetail" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="VARCHAR" />
+    <result column="latitude" property="latitude" jdbcType="VARCHAR" />
+    <result column="main_account" property="mainAccount" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="allow_look" property="allowLook" jdbcType="TINYINT" />
+    <result column="allow_unbind" property="allowUnbind" jdbcType="TINYINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+
+
+  <select id="selectByProjectName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    *
+    from project
+    where project_name  like CONCAT('%',#{projectName},'%')
+  </select>
+  <delete id="deleteById" parameterType="java.lang.String">
+    delete from project
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+
+
+
+
+
+
+</mapper>

@@ -13,17 +13,19 @@ import org.testng.annotations.Test;
 
 import com.ksyun.aiot.callback.EventObject;
 
+import javax.print.DocFlavor;
 import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
 @SpringBootTest
-class AihouseTestApplicationTests extends AbstractTestNGSpringContextTests {
+class AihouseTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
     EventSource eventSource;
     @Autowired
     RequestProperties requestProperties;
+
 
 
     @Test
