@@ -28,7 +28,7 @@ class AihouseTest extends AbstractTestNGSpringContextTests {
 
 
 
-    @Test
+//    @Test
     public void turnoff() {
         String url =requestProperties.getBaseUrl()+ "/api/ks-aihouse/device/switch?deviceId=mi.01001.light.2.efef99f2-9e81-4b74-a778-e085a08d020c&switchOn=1";
         Map<String, String> head = new HashMap<>();
