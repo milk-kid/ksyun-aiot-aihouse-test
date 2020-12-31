@@ -43,7 +43,7 @@ public class ProjectMangerTest extends AihouseTest {
         String body = HttpRequest.post(url).addHeaders(header).body("{\"projectName\":\"回归测试用\",\"projectType\":\"community\",\"squareMeter\":10,\"addressDetail\":\"啊手动阀手动阀\",\"provinceCode\":\"110000\",\"cityCode\":\"110100\",\"countryCode\":\"110101\",\"longitude\":\"116.416357\",\"latitude\":\"39.928353\"}").execute().body();
         System.out.println(body);
         ResponseBody responseBody = mapper.readValue(body, ResponseBody.class);
-        Assert.assertEquals(200, responseBody.getCode());
+        Assert.assertEquals(responseBody.getCode(), 401);
     }
 
     @Test
