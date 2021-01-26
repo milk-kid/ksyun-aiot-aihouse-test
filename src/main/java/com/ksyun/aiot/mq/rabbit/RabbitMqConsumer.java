@@ -2,6 +2,7 @@ package com.ksyun.aiot.mq.rabbit;
 
 import com.ksyun.aiot.callback.EventObject;
 import com.ksyun.aiot.callback.EventSource;
+import com.ksyun.aiot.utils.Timekeeper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -19,12 +20,12 @@ public class RabbitMqConsumer {
     @RabbitListener(queues = {RabbitConfig.eventMessage})
     public void handler(Message object) {
         byte[] body = object.getBody();
-        log.info("消费消息 = {}",new String(body));
+        log.info("消费消息 = {}", new String(body));
 
-        if(eventSource==null){
-            System.out.println("null");
-        }
-        eventSource.notifyListenerEvents(new EventObject(new String(body)));
+        Timekeeper timekeeper = new Timekeeper();
+
+        //todo 控制设备时回调用
+//        eventSource.notifyListenerEvents(new EventObject(new String(body)));
 
     }
 

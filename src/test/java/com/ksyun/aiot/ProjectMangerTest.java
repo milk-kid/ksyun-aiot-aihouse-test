@@ -1,7 +1,6 @@
 package com.ksyun.aiot;
 
 import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ksyun.aiot.entity.Project;
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public class ProjectMangerTest extends AihouseTest {
+public class ProjectMangerTest extends BaseTest {
 
     @Autowired
     ProjectMapper ProjectMapper;
