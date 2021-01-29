@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ksyun.aiot.mapper.DevicePropertyInfoMapper">
+  <resultMap id="BaseResultMap" type="com.ksyun.aiot.entity.DevicePropertyInfo">
+    <!--@mbg.generated-->
+    <!--@Table device_property_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="device_id" jdbcType="BIGINT" property="deviceId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="permit" jdbcType="BOOLEAN" property="permit" />
+    <result column="scene" jdbcType="VARCHAR" property="scene" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="data_type" jdbcType="VARCHAR" property="dataType" />
+    <result column="value_range" jdbcType="VARCHAR" property="valueRange" />
+    <result column="value_len" jdbcType="VARCHAR" property="valueLen" />
+    <result column="max_length" jdbcType="INTEGER" property="maxLength" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="del_flag" jdbcType="BOOLEAN" property="delFlag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, device_id, `name`, code, `value`, permit, scene, unit, data_type, value_range, 
+    value_len, max_length, description, remark, create_time, update_time, del_flag
+  </sql>
+  <select id="selectById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from device_property_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from device_property_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ksyun.aiot.entity.DevicePropertyInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into device_property_info (device_id, `name`, code, 
+      `value`, permit, scene, 
+      unit, data_type, value_range, 
+      value_len, max_length, description, 
+      remark, create_time, update_time, 
+      del_flag)
+    values (#{deviceId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{value,jdbcType=VARCHAR}, #{permit,jdbcType=BOOLEAN}, #{scene,jdbcType=VARCHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{dataType,jdbcType=VARCHAR}, #{valueRange,jdbcType=VARCHAR}, 
+      #{valueLen,jdbcType=VARCHAR}, #{maxLength,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{delFlag,jdbcType=BOOLEAN})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ksyun.aiot.entity.DevicePropertyInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into device_property_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="value != null">
+        `value`,
+      </if>
+      <if test="permit != null">
+        permit,
+      </if>
+      <if test="scene != null">
+        scene,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="dataType != null">
+        data_type,
+      </if>
+      <if test="valueRange != null">
+        value_range,
+      </if>
+      <if test="valueLen != null">
+        value_len,
+      </if>
+      <if test="maxLength != null">
+        max_length,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="permit != null">
+        #{permit,jdbcType=BOOLEAN},
+      </if>
+      <if test="scene != null">
+        #{scene,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null">
+        #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="valueRange != null">
+        #{valueRange,jdbcType=VARCHAR},
+      </if>
+      <if test="valueLen != null">
+        #{valueLen,jdbcType=VARCHAR},
+      </if>
+      <if test="maxLength != null">
+        #{maxLength,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=BOOLEAN},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ksyun.aiot.entity.DevicePropertyInfo">
+    <!--@mbg.generated-->
+    update device_property_info
+    <set>
+      <if test="deviceId != null">
+        device_id = #{deviceId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        `value` = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="permit != null">
+        permit = #{permit,jdbcType=BOOLEAN},
+      </if>
+      <if test="scene != null">
+        scene = #{scene,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null">
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="dataType != null">
+        data_type = #{dataType,jdbcType=VARCHAR},
+      </if>
+      <if test="valueRange != null">
+        value_range = #{valueRange,jdbcType=VARCHAR},
+      </if>
+      <if test="valueLen != null">
+        value_len = #{valueLen,jdbcType=VARCHAR},
+      </if>
+      <if test="maxLength != null">
+        max_length = #{maxLength,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=BOOLEAN},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ksyun.aiot.entity.DevicePropertyInfo">
+    <!--@mbg.generated-->
+    update device_property_info
+    set device_id = #{deviceId,jdbcType=BIGINT},
+      `name` = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      `value` = #{value,jdbcType=VARCHAR},
+      permit = #{permit,jdbcType=BOOLEAN},
+      scene = #{scene,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      data_type = #{dataType,jdbcType=VARCHAR},
+      value_range = #{valueRange,jdbcType=VARCHAR},
+      value_len = #{valueLen,jdbcType=VARCHAR},
+      max_length = #{maxLength,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=BOOLEAN}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

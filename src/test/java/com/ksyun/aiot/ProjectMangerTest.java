@@ -60,6 +60,24 @@ public class ProjectMangerTest extends BaseTest {
         log.info("responseBody = {}",body);
         ResponseBody responseBody = mapper.readValue(body, ResponseBody.class);
         Assert.assertEquals(200,responseBody.getCode());
+ /* Timekeeper timekeeper = new Timekeeper();
+        eventSource.addListener(new EventListener() {
 
+            @Override
+            public void handle(EventObject eventObject) {
+
+                timekeeper.setCount(timekeeper.getCount() + 1);
+                if (timekeeper.getCount() >= 1) {
+                    timekeeper.setFlag(false);
+                }
+            }
+        });
+
+        while (timekeeper.getFlag() ) {
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
+        }*/
     }
 }

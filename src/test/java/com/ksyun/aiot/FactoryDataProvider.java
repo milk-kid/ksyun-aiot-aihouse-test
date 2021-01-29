@@ -9,6 +9,11 @@ import java.util.Iterator;
 public class FactoryDataProvider {
 
 
+    /**
+     * //bug 不开多线程，dataprovider多个方法并发之呢个运行一半case
+     * @param method
+     * @return
+     */
     @DataProvider(parallel = false)
     public Iterator<Object[]> csvDataProvider(Method method){
         return getDataProvider(method.getDeclaringClass(),method);

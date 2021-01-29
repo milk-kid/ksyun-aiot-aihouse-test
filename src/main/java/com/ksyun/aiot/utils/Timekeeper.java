@@ -1,9 +1,12 @@
 package com.ksyun.aiot.utils;
 
-import sun.awt.image.IntegerComponentRaster;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
+@Slf4j
 public class Timekeeper {
     private int count = 0;
     private boolean flag = true;
@@ -32,14 +35,13 @@ public class Timekeeper {
      * @param key
      */
     public void setCount(String key) {
+
         if (map.containsKey(key)) {
             Integer count = map.get(key);
-            if (count == 0) {
-                count = 1;
-            } else {
-                count += 1;
-            }
+            count += 1;
             map.put(key, count);
+        } else {
+            map.put(key, 1);
         }
     }
 
@@ -47,4 +49,10 @@ public class Timekeeper {
         return map.get(key);
     }
 
+    public void showMap() {
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        for (Map.Entry<String, Integer> entry : entries) {
+            log.info("deviceId = {} , 执行次数 = {}", entry.getKey(), entry.getValue());
+        }
+    }
 }
