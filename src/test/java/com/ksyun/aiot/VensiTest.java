@@ -14,6 +14,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
+
 @Slf4j
 public class VensiTest extends BaseTest {
 
@@ -72,6 +75,7 @@ public class VensiTest extends BaseTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        JavaCompiler javac = ToolProvider.getSystemJavaCompiler();
     }
 }
 

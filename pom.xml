@@ -59,11 +59,11 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -118,7 +118,16 @@
             <version>5.4.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.28</version>
+        </dependency>
+
+
     </dependencies>
+
 
     <build>
         <plugins>
@@ -127,10 +136,10 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>
-                            <groupId>org.springframework.boot</groupId>
-                            <artifactId>spring-boot-configuration-processor</artifactId>
-                        </exclude>
+                           <exclude>
+                               <groupId>org.springframework.boot</groupId>
+                               <artifactId>spring-boot-configuration-processor</artifactId>
+                           </exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -147,5 +156,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
